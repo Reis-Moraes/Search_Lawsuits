@@ -4,7 +4,6 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 const app = express();
-const port = 3000;  // Porta do servidor intermediário
 
 // Ativar CORS para permitir que o frontend acesse este servidor
 app.use(cors());
@@ -58,7 +57,7 @@ app.get('/buscar-cliente', async (req, res) => {
     }
 });
 
-// Iniciar o servidor
+const port = process.env.PORT || 3000;  // Render/Heroku define PORT
 app.listen(port, () => {
-    console.log(`Servidor intermediário rodando em http://localhost:${port}`);
+    console.log(`Servidor rodando na porta ${port}`);
 });
