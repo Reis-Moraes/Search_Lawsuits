@@ -1,0 +1,314 @@
+/* Resetando estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background: url('assets/logo.png') no-repeat center center fixed; /* Imagem de fundo */
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(211, 211, 211, 0.7); /* Fundo cinza claro com opacidade */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(133, 133, 133, 0.9); /* Fundo cinza claro com opacidade */
+    z-index: -1; /* Garante que o fundo cinza fique abaixo do conteúdo */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    max-width: 1000px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1000px;
+    margin-bottom: 200px;
+    
+}
+
+.form-container {
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    color: #b99671;  /* Vermelho similar ao logo */
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.2em;
+    background-color: #b99671;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #9b3d31; /* Vermelho mais escuro */
+}
+
+.results-container {
+    width: 100%;
+    max-height: 400px;  /* Tamanho fixo para a área de resultados */
+    overflow-y: auto;  /* Adiciona rolagem quando necessário */
+    margin-bottom: 20px;  /* Espaço entre os resultados e o rodapé */
+}
+
+.erro {
+    color: #E74C3C; /* Vermelho de erro */
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.process-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.process-list li {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.process-list li:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+}
+
+.process-list li .process-details {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.process-list li.active .process-details {
+    display: block;
+}
+
+.process-list li ul li {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Rodapé */
+footer {
+    background-color: #2C3E50;
+    color: #fff;
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9em;
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center; /* Alinha o conteúdo horizontalmente */
+    align-items: center; /* Alinha o conteúdo verticalmente */
+}
+
+/* Ajustes no container do conteúdo do rodapé */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  /* Mantenha o número de colunas */
+    gap: 20px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    max-width: 1200px;  /* Limita a largura para não ultrapassar a tela */
+    width: 100%;
+}
+
+.addresses {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0;
+}
+
+/* Ajustes nos blocos de endereço */
+.address, .contact, .social-media {
+    color: white;
+    padding: 30px;  /* Ajuste para reduzir o espaço interno */
+    border-radius: 8px;
+    text-align: left; /* Alinha o texto à esquerda */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Alinha o conteúdo para o topo */
+}
+
+.address h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.address p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.address a, .social-media a {
+    color: #E67E22;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.address a:hover, .social-media a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #BDC3C7;
+}
+
+.footer-bottom a {
+    color: #E67E22;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes responsivos para telas menores */
+@media (max-width: 1200px) {
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);  /* 3 colunas para telas menores */
+    }
+    .addresses {
+        grid-template-columns: repeat(3, 1fr);  /* 3 colunas para telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;  /* Uma coluna para telas menores */
+    }
+    .addresses {
+        grid-template-columns: 1fr;  /* Uma coluna para telas menores */
+    }
+    .footer-bottom {
+        font-size: 0.7em;
+    }
+}
+
+/* Estilo para o botão flutuante */
+.float-btn-group {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza o botão */
+    z-index: 1000;
+}
+
+.float-btn.btn-whatsapp {
+    background-color: #128c7e; /* Cor do WhatsApp */
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.float-btn.btn-whatsapp:hover {
+    background-color: #128C7E; /* Cor mais escura do WhatsApp ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+.float-btn.btn-whatsapp svg {
+    margin-right: 10px;
+}
+
+.float-btn.btn-whatsapp span {
+    font-weight: 600;
+}
+
+.float-btn.btn-whatsapp b {
+    font-weight: 700;
+}
+
+/* Estilo para os links das redes sociais */
+.social-media {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os ícones */
+    justify-content: center; /* Alinha os ícones ao centro */
+    align-items: center;
+}
+
+.social-media a {
+    color: white;
+    font-size: 1.2em; /* Tamanho dos ícones */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #E67E22;  /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+.social-media i {
+    margin-right: 8px;  /* Espaçamento entre o ícone e o texto */
+}
