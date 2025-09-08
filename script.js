@@ -19,7 +19,8 @@ async function buscarCliente(event) {
 
 try {
     // Fazer a requisição para o servidor intermediário
-    let response = await fetch(`http://localhost:3000/buscar-cliente?identification=${CPF}`);
+    let response = await fetch(`https://search-lawsuits.onrender.com/buscar-cliente?identification=${CPF}`);
+
 
     const data = await response.json();
 
