@@ -41,7 +41,6 @@ app.get('/buscar-cliente', async (req, res) => {
                 step: processo.step,
                 stage: processo.stage,
                 type: processo.type,
-                responsible: processo.responsible,
                 name: cliente ? cliente.name : 'Cliente não encontrado',
                 identification: cliente ? cliente.identification : 'Identificação não encontrada',
             };

@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Raleway, sans-serif;
     color: #333;
     background: url('assets/logo.png') no-repeat center center fixed; /* Imagem de fundo */
     background-size: cover;
@@ -102,10 +102,13 @@ button:hover {
     margin-bottom: 20px;  /* Espaço entre os resultados e o rodapé */
 }
 
-.erro {
-    color: #E74C3C; /* Vermelho de erro */
-    font-size: 1.2em;
-    margin-bottom: 20px;
+/* Estilo para erro */
+#mensagem-erro.erro {
+    color: #E74C3C; /* vermelho de erro */
+    padding: 8px 8px;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
 }
 
 .process-list {
@@ -176,6 +179,7 @@ footer {
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     padding: 0;
+    word-wrap: break-word;
 }
 
 /* Ajustes nos blocos de endereço */
@@ -201,7 +205,7 @@ footer {
 }
 
 .address a, .social-media a {
-    color: #E67E22;
+    color: #b99671;
     font-size: 0.9em;
     text-decoration: none;
 }
@@ -219,7 +223,7 @@ footer {
 }
 
 .footer-bottom a {
-    color: #E67E22;
+    color: #b99671;
     text-decoration: none;
 }
 
@@ -312,3 +316,63 @@ footer {
 .social-media i {
     margin-right: 8px;  /* Espaçamento entre o ícone e o texto */
 }
+/* Spinner de carregamento */
+.spinner {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.process-details {
+    display: none;
+    margin-top: 12px;
+    padding: 12px;
+    background: #ffffff;
+    border-left: 4px solid #b99671; /* destaque com cor da paleta */
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #444;
+    line-height: 1.5;
+}
+
+.process-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.process-details ul li {
+    margin-bottom: 8px;
+}
+
+.process-details.active {
+    display: block;
+}
+
+.process-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle-arrow {
+    transition: transform 0.3s ease;
+}
+
+.toggle-arrow.rotated {
+    transform: rotate(180deg);
+}
+
+
